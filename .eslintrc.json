@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": false,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": [
+		"eslint:recommended",
+		"prettier"
+	],
+	"plugins": [
+		"prettier"
+	],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "padding-line-between-statements": "warn",
+    "newline-before-return": "warn",
+    "prefer-const": "warn",
+    "no-empty": "warn",
+    "no-else-return": "warn",
+    "prettier/prettier": "warn"
+  }
+}
