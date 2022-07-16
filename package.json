@@ -4,6 +4,8 @@
 	"description": "A simple Node.js script to listen for Webhook events from Plex, and send a message via Telegram accordingly (using a bot).",
 	"main": "src/index.js",
 	"scripts": {
+		"start": "node ./src/index.js",
+		"dev": "nodemon ./src/index.js",
 		"test": "jest ./tests --forceExit"
 	},
 	"repository": {
