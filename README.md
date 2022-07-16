@@ -17,3 +17,7 @@ Clone the contents from `sample.env` into a `.env` file and enter the relevant d
 Run `npm start`.
 
 Within Plex, go to Settings > Webhooks and add this server (with the chosen port) to the Webhooks list - example: `http://localhost:5000`. Webhooks are ran from the server which is running Plex.
+
+## Docker
+
+You can also run this project within docker, simply set up your `.env` file as documented above, and then run `docker compose up -d` or `docker-compose up -d` (depending on which version of Docker you're using).
