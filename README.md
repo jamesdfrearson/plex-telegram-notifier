@@ -22,7 +22,7 @@ Within Plex, go to Settings > Webhooks and add this server (with the chosen port
 
 You can also run this project within docker, simply set up your `.env` file as documented above, and then run `docker compose up -d` or `docker-compose up -d` (depending on which version of Docker you're using).
 
-# Getting the bot token and chat ID from Telegram
+## Getting the bot token and chat ID from Telegram
 
 To create a bot, simply message @BotFather on Telegram and create a new bot by messaging `/newbot`, then give the bot a name and a username. BotFather will then message you a HTTP API token, simply copy that token into your `.env` file.
 
