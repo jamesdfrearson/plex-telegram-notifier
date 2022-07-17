@@ -44,7 +44,7 @@ class PlexTelegramNotifier {
       console.log(`[Plex Telegram Notifier] Listening on port ${instance.LISTEN_PORT}.`);
 
       // Initialise the Telegram API.
-      instance.telegramApi = new Telegram({
+      const telegramApi = new Telegram({
         token: instance.TELEGRAM_BOT_TOKEN,
         updates: {
           enabled: true,
@@ -54,7 +54,7 @@ class PlexTelegramNotifier {
 
       try {
         // Send a test message via the bot to the specified chat.
-        await instance.telegramApi.sendMessage({
+        await telegramApi.sendMessage({
           chat_id: instance.TELEGRAM_CHAT_ID,
           text: `Plex Telegram Notifier is now active.`,
         });
@@ -129,8 +129,17 @@ class PlexTelegramNotifier {
 
     console.log(`${title} has just been added to the Plex library.`);
 
+    // Initialise the Telegram API.
+    const telegramApi = new Telegram({
+      token: instance.TELEGRAM_BOT_TOKEN,
+      updates: {
+        enabled: true,
+        get_interval: 1000,
+      },
+    });
+
     try {
-      await instance.telegramApi.sendPhoto({
+      await telegramApi.sendPhoto({
         chat_id: instance.TELEGRAM_CHAT_ID,
         caption: `${title} has just been added to the Plex library.`,
         photo: req?.file?.path ? fs.createReadStream(req?.file?.path) : '',
